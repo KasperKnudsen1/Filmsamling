@@ -23,7 +23,11 @@ public class Movie {
         return længde;
     } public int getÅr(){
         return år;
-    } public String getGenre(){
+    }
+    public String getGenre(){
         return genre;
+    }
+    public String toString(){
+        return "Titel" + titel + "Instruktør" + instruktør + "Farve?" + farvefilm + "Længde i minutter" + længde + "Årstål for film" + år + "Genre" + genre;
     }
 }
