@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        MovieCollection movieCollection = new MovieCollection();
+        MovieController movieController = new MovieController();
 
         int choice;
         do {
@@ -15,7 +15,7 @@ public class Main {
             scanner.nextLine();
             switch (choice) {
                 case 1:
-                    addMovie(movieCollection, scanner);
+                    addMovie(movieController, scanner);
                     break;
                 case 2:
                     System.out.println("Slutter programet");
@@ -26,7 +26,7 @@ public class Main {
         } while (choice != 2);
     }
 
-    private static void addMovie(MovieCollection movieCollection, Scanner scanner) {
+    private static void addMovie(MovieController movieController, Scanner scanner) {
         System.out.println("\nIndtast filmens navn:");
         String titel = scanner.nextLine();
 
@@ -48,7 +48,7 @@ public class Main {
         String genre = scanner.nextLine();
 
         Movie movie = new Movie(titel, instruktør, farve.equalsIgnoreCase("ja"), længde, år, genre);
-        movieCollection.addMovie(movie);
+        movieController.addMovie(movie);
 
         System.out.println("Filmen blev tilføjet til samlingen!");
     }
